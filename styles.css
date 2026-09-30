@@ -1,82 +1,116 @@
 /* --------------------------------
-   Hero
+    Hero (Full Screen Flex Grid)
 --------------------------------- */
+
+.column-screen {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
 
 .hero {
   position: relative;
   width: 100%;
   height: 460px;
   overflow: hidden;
-  margin: 1rem 0 2.5rem 0;
-  border-radius: 12px;
+  border-radius: 0;
+  
+  /* Use the background for the scenic water/gradient texture */
+  background-image: url("images/chinook.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  
+  /* Create a flex container to split text and the fish image */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 max(2rem, calc((100vw - 1100px) / 2));
 }
 
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  display: block;
-  margin: 0 !important;
-}
-
-/* Darken primarily the left side so the text is readable
-   while keeping the salmon and water visible. */
-
+/* Dark gradient overlay for the background */
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.62) 0%,
-    rgba(0, 0, 0, 0.38) 30%,
-    rgba(0, 0, 0, 0.08) 65%,
-    rgba(0, 0, 0, 0.02) 100%
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.62) 40%,
+    rgba(0, 0, 0, 0.3) 70%,
+    rgba(0, 0, 0, 0.1) 100%
   );
   pointer-events: none;
+  z-index: 1;
 }
 
+/* Text box sits safely on the left */
 .hero-overlay {
-  position: absolute;
+  position: relative;
   z-index: 2;
-  top: 3.5rem;
-  left: 3.5rem;
   color: white;
-  max-width: 520px;
+  max-width: 540px;
+  flex-shrink: 0;
+}
+
+.hero-kicker {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
 .hero-overlay h1 {
   font-size: 2.35rem;
   line-height: 1.15;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.0rem 0;
   color: white;
   letter-spacing: -0.02em;
-}
-
-.hero-overlay p {
-  margin: 0.35rem 0;
-  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 .hero-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   line-height: 1.4;
-  margin-bottom: 1.5rem !important;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 1.25rem !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
-.hero-context {
-  font-size: 0.95rem;
-  opacity: 0.9;
+.hero-meta, 
+.hero-meta * {
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
 }
 
-.hero-team {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  margin-top: 0.75rem !important;
+.hero-meta {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 0.75rem;
+  margin-top: 0.75rem;
 }
 
-/* Award image */
+/* New class for a dedicated graphic element on the right */
+.hero-graphic {
+  position: relative;
+  z-index: 2;
+  max-width: 450px;
+  height: auto;
+  object-fit: contain;
+  margin-left: 2rem;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+/* Push Quarto's "On this page" sidebar down */
+#quarto-margin-sidebar {
+  margin-top: 2rem;
+}
+/* --------------------------------
+    Award Image
+--------------------------------- */
 
 .award-image {
   width: 500px;
@@ -85,9 +119,18 @@
   display: block;
   margin: 1.5rem auto;
 }
-/* Hide Quarto's default title block.
-   The custom hero provides the page title instead. */
+
+/* --------------------------------
+    Quarto Title
+--------------------------------- */
 
 .quarto-title-block {
   display: none;
+}
+
+/* Align the sidebar nicely right at the top of the content below the hero */
+#quarto-margin-sidebar {
+  position: sticky !important;
+  top: 2rem !important;
+  margin-top: 30px !important; 
 }
