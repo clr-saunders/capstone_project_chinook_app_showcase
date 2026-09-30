@@ -1,0 +1,93 @@
+/* --------------------------------
+   Hero
+--------------------------------- */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 460px;
+  overflow: hidden;
+  margin: 1rem 0 2.5rem 0;
+  border-radius: 12px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  margin: 0 !important;
+}
+
+/* Darken primarily the left side so the text is readable
+   while keeping the salmon and water visible. */
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.62) 0%,
+    rgba(0, 0, 0, 0.38) 30%,
+    rgba(0, 0, 0, 0.08) 65%,
+    rgba(0, 0, 0, 0.02) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  z-index: 2;
+  top: 3.5rem;
+  left: 3.5rem;
+  color: white;
+  max-width: 520px;
+}
+
+.hero-overlay h1 {
+  font-size: 2.35rem;
+  line-height: 1.15;
+  margin: 0 0 1rem 0;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.hero-overlay p {
+  margin: 0.35rem 0;
+  color: white;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem !important;
+}
+
+.hero-context {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.hero-team {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 0.75rem !important;
+}
+
+/* Award image */
+
+.award-image {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+}
+/* Hide Quarto's default title block.
+   The custom hero provides the page title instead. */
+
+.quarto-title-block {
+  display: none;
+}
