@@ -158,15 +158,15 @@ I contributed to the application's data processing workflows, application develo
 ### Application Development
 
 * Developed **Tab 1**, including the interface, user instructions, data pipeline controls, and pipeline status feedback.
-* Developed the table used in **Tab 3**.
+* Supported the development of the table used in **Tab 3**.
 * Contributed to the visual design and aesthetics across all three application tabs.
 
 ### Deployment and Infrastructure
 
 * Worked with IT to establish the project within a pre-configured **Ubuntu container environment**, including identifying and requesting the software requirements needed for the application.
-* Set up the project's GitHub repository and development workflow within the provided environment.
 * Worked with IT to establish a **Samba share** as the project's shared data and output connection point.
 * Worked with IT to configure deployment of the application directly from the container using **Shiny**.
+* Wrote the development guide for future users of the application. 
 
 ## Technologies
 

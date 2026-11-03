@@ -36,9 +36,9 @@ The showcase is intended to demonstrate the project's technical scope and my rol
 * Developed biological data processing workflows and scripts
 * Developed the multi-year and pooled-year views
 * Developed the Tab 1 data pipeline interface and status feedback
-* Developed the Tab 3 infilling table
 * Contributed to application UI and visual design
 * Worked with DFO IT on the Ubuntu development environment, shared data infrastructure, and Shiny deployment
+* Wrote the Development Guide for future users and developers
 
 ## Technologies
 
